@@ -2,8 +2,23 @@
  * Оператор switch
  */
 
-const username = "Mango";
+const username = 'Mango';
 
+switch (username) {
+  case 'Mango':
+    // command1;
+    // command2;
+    // command3;
+    // command4;
+    break;
+
+  case 'hello':
+    // command1;
+    // command2;
+    // command3;
+    // command4;
+    break;
+}
 /**
  * Виконай рефакторинг коду задачі використовуючи switch.
  *
@@ -16,13 +31,30 @@ const username = "Mango";
 const daysUntilDeadline = 5;
 
 if (daysUntilDeadline === 0) {
-  console.log("Today");
+  console.log('Today');
 } else if (daysUntilDeadline === 1) {
-  console.log("Tomorrow");
+  console.log('Tomorrow');
 } else if (daysUntilDeadline === 2) {
-  console.log("Overmorrow");
+  console.log('Overmorrow');
 } else {
-  console.log("Date in the future");
+  console.log('Date in the future');
+}
+
+switch (daysUntilDeadline) {
+  case 0:
+    console.log('Today');
+    break;
+
+  case 1:
+    console.log('Tomorrow');
+    return;
+
+  case 2:
+    console.log('Overmorrow');
+    break;
+
+  default:
+    console.log('Date in the future');
 }
 
 /*
@@ -36,7 +68,7 @@ if (daysUntilDeadline === 0) {
  * - 'Вам перезвонит менеджер'
  */
 
-const option = 1;
-let message = "";
+// const option = 1;
+// let message = '';
 
-console.log(message);
+// console.log(message);
