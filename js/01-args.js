@@ -1,43 +1,87 @@
 /**
  * Псевдомасив arguments и Array.from
  */
+//!======================================================
+// function foo(x1, x2, x3) {
+//   for (const item of arguments) {
+//   }
+//   arguments[2]
+// arguments.length
+// }
 
-function foo() {
-  console.log(arguments);
-  const args = Array.from(arguments);
-  console.log(args);
-}
+// foo(10, 20, 'Hello', true);
 
-fn(1, 2, 3);
-fn(1, 2, 3, 4, 5);
-fn(1, 2, 3, 4, 5, 6, 7);
+//!======================================================
+
+// function foo(arguments) {
+//     const args = Array.from(arguments);
+//   const args = Array.from(arguments);
+//   console.log(args.includes(25));
+// }
+
+// foo([10, 2, 60, 10, 12]);
+// foo(10, 2, 60, 10, 12, 25);
+
+//!======================================================
+
+// const max = Math.max(10, 10, 24, 60);
+// const min = Math.min(10, 24, 60, 6, 21, 3, 7, 89, 2);
+
+// const arr = [];
+// arr.push(1, 6, 1, 2, 6, 7, 2);
+// console.log(arr);
+
+//!======================================================
 
 /**
  * Напиши функцію add для складання довільної
  * кількості аргументів (чисел)
  */
 
-const add = function (arguments) {
-  const args = Array.from(arguments);
-  let total = 0;
+function task1() {
+  // arguments = []
+  const args = Array.from(arguments); // [25,22,12]
 
-  for (const arg of args) {
-    total += arg;
+  let sum = 0;
+
+  for (const item of args) {
+    sum += item;
   }
 
-  return total;
-};
+  console.log(sum);
 
-console.log(add(1, 2, 3));
-console.log(add(1, 2, 4, 5, 6));
+  return sum;
+}
 
+// function task1(arr) {
+//   let sum = 0;
+
+//   for (const item of args) {
+//     sum += item;
+//   }
+
+//   console.log(sum);
+
+//   return sum;
+// // }
+// task1(25, 22, 12); //arguments = [25 22 12]
+
+// task1(11);
+// task1(); // arguments = [];
+// task1(1, 4, 6, 2, 4, 6);
+
+//!======================================================
 /**
  * Напиши функцію calAverage() яка приймає довільну кількість
  * аргументів і повертає їхнє середнє значення. Усі аргументи
  * будуть лише числами.
  */
-function calAverage() {}
 
-console.log(calAverage(1, 2, 3, 4)); // 2.5
-console.log(calAverage(14, 8, 2)); // 8
-console.log(calAverage(27, 43, 2, 8, 36)); // 23.2
+// function calAverage() {
+//   const args = Array.from(arguments);
+//   let sum = 0;
+//   for (const item of args) {
+//     sum += item;
+//   }
+//   return sum / args.length;
+// }
