@@ -1,0 +1,36 @@
+.coctail-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 20px;
+  gap: 15px;
+  border: 1px solid black;
+  border-radius: 50px;
+  list-style-type: none;
+}
+
+.coctail-item {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid teal;
+  padding: 5px;
+  gap: 2px;
+  border-radius: 20px;
+}
+
+.coctail-item img {
+  width: 100%;
+  border-radius: 20px;
+}
+.coctail-item h5 {
+  margin: 0;
+  padding: 0;
+}
+
+.coctail-item p {
+  max-height: 50px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}

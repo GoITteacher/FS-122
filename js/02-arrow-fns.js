@@ -5,14 +5,36 @@
  * - Псевдомасив arguments (...args)
  * - Інлайн стрілочні функції
  */
+//!======================================================
+// function myFunction(x) {
+//   return x * 2;
+// }
 
-function add(a, b, c) {
-  return a + b + c;
-}
+// const myFunction = x => x * 2;
 
-// const addArrow =
+// myFunction(10); // 20
 
-console.log(add(5, 10, 15));
+// ()=>{
+//   return ''
+// }
+
+// ()=>2*2
+
+//!======================================================
+// const arrowFn = (...items)=>{
+
+// }
+
+// Math.max()
+
+//!======================================================
+// function add(a, b, c) {
+//   return a + b + c;
+// }
+
+// const addArrow = (a, b, c) => a + b + c;
+
+// console.log(add(5, 10, 15));
 // console.log(addArrow(5, 10, 15));
 
 /**
@@ -23,8 +45,21 @@ function fnA() {
     a: 5,
   };
 }
+// const arrow = (x, y) => ({
+//   name: x,
+//   age: y,
+// });
 
-console.log(fnA());
+const fnA = () => ({
+  a: 5,
+});
+
+const arrowFn = () => {
+  return {
+    a: 5,
+  };
+};
+// console.log(fnA());
 
 // const arrowFnA =
 
@@ -39,10 +74,15 @@ function calc(a, b, callback) {
   console.log(result);
 }
 
-calc(2, 3, function (x, y) {
-  return x + y;
-});
+calc(2, 3, (x, y) => x + y);
 
-calc(10, 8, function (x, y) {
-  return x - y;
-});
+// calc(2, 3, function (x, y) {
+//   return x + y;
+// });
+
+calc(10, 8, (x, y) => x - y);
+// calc(10, 8, function (x, y) {
+//   return x - y;
+// });
+
+// (() => {})();

@@ -4,12 +4,1601 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Array methods</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- <script src="./js/01-callbacks.js" type="module"></script> -->
     <!-- <script src="./js/02-arrow-fns.js" type="module"></script> -->
     <!-- <script src="./js/03-foreach.js" type="module"></script> -->
-    <!-- <script src="./js/04-map.js" type="module"></script> -->
+    <script src="./js/04-map.js" type="module"></script>
     <!-- <script src="./js/05-flatmap.js" type="module"></script> -->
+    <ul class="coctail-list">
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Vodka_Lemon.jpg"
+          alt="test"
+        />
+        <h5>Vodka Lemon</h5>
+        <p>
+          Vodka Lemon is a zesty and citrusy cocktail that's perfect for those
+          who love the bright and tangy flavors of lemon. This refreshing
+          concoction combines vodka with freshly squeezed lemon juice and a hint
+          of sweetness to balance the acidity. It's a drink that's both
+          invigorating and delightful, making it a great choice for any
+          occasion. Sip on a Vodka Lemon and let its sunny flavors brighten your
+          day.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Empellon_Cocina_s_Fat-Washed_Mezcal.jpg"
+          alt="test"
+        />
+        <h5>Empellón Cocina's Fat-Washed Mezcal</h5>
+        <p>
+          Empellón Cocina's Fat-Washed Mezcal is a smoky and savory cocktail
+          that's perfect for those who appreciate complex and adventurous
+          flavors in their drinks. This intriguing libation features fat-washed
+          mezcal, where the smoky spirit is infused with rendered fat for a
+          unique richness. It's combined with pineapple-infused Aperol and fresh
+          lime juice, creating a well-balanced and aromatic drink with a touch
+          of sweetness, smokiness, and tropical brightness. It's a cocktail
+          that's known for its unique infusion process and the intriguing
+          interplay of flavors, making it a favorite choice for those who want
+          to embark on a flavor adventure. Sip on Empellón Cocina's Fat-Washed
+          Mezcal cocktail and let its complexity delight your palate.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Wine_Cooler.jpg"
+          alt="test"
+        />
+        <h5>Wine Cooler</h5>
+        <p>
+          Wine Cooler is a light and refreshing beverage that's perfect for
+          those who appreciate the crispness of white wine. This effervescent
+          libation blends white wine with soda and a splash of citrus, creating
+          a breezy and revitalizing drink with the bright and zesty notes of
+          citrus. It's known for its simplicity and the ability to provide a
+          cool and enjoyable sip on a warm day. Sip on a Wine Cooler and savor
+          the elegance of this uncomplicated classic.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Rum_Toddy.jpg"
+          alt="test"
+        />
+        <h5>Rum Toddy</h5>
+        <p>
+          Rum Toddy is a soothing and warming cocktail that provides comfort on
+          chilly evenings. This cozy drink combines the warmth of rum with the
+          sweetness of honey, the tanginess of lemon juice, and a hint of
+          spices, such as cinnamon or cloves. The result is a comforting and
+          soul-warming cocktail that wraps you in a blanket of flavors. Sip on a
+          Rum Toddy and let its soothing qualities melt away the chill.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Pineapple_Paloma.jpg"
+          alt="test"
+        />
+        <h5>Pineapple Paloma</h5>
+        <p>
+          Pineapple Paloma is a tropical twist on the classic Paloma cocktail.
+          This refreshing drink combines the flavors of tequila, grapefruit
+          juice, lime juice, and the tropical sweetness of pineapple juice. The
+          result is a vibrant and tangy beverage that captures the essence of
+          summer. Savor the tropical flavors of Pineapple Paloma and let it
+          transport you to a sunny beach.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Salty_Dog.jpg"
+          alt="test"
+        />
+        <h5>Salty Dog</h5>
+        <p>
+          Salty Dog is a zesty and refreshing cocktail that's perfect for those
+          who enjoy the bright and tangy flavors of grapefruit. This
+          invigorating libation combines vodka with fresh grapefruit juice and
+          is typically served in a salt-rimmed glass, creating a crisp and
+          citrusy drink with a hint of saltiness. It's a cocktail that's known
+          for its grapefruit kick and the briny touch of salt, making it a
+          favorite choice for those who appreciate a vibrant and lip-smacking
+          sip. Sip on a Salty Dog and let its citrusy goodness awaken your taste
+          buds.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Jackhammer.jpg"
+          alt="test"
+        />
+        <h5>Jackhammer</h5>
+        <p>
+          Jackhammer is a bold and intense cocktail that features a mix of Jack
+          Daniel's Tennessee whiskey and amaretto liqueur. This strong and
+          flavorful drink is perfect for those who enjoy the robust combination
+          of whiskey and amaretto. Sip on a Jackhammer cocktail and let its
+          powerful flavors awaken your taste buds.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Hawaiian_Cocktail.jpg"
+          alt="test"
+        />
+        <h5>Hawaiian Cocktail</h5>
+        <p>
+          Hawaiian Cocktail is a tropical and fruity drink that embodies the
+          spirit of the Hawaiian islands. This vibrant cocktail combines the
+          smoothness of rum with the tropical flavors of pineapple juice and a
+          hint of creamy coconut. The result is a refreshing and sun-kissed
+          beverage that transports you to the sandy beaches and swaying palm
+          trees of Hawaii. Sip on a Hawaiian Cocktail and enjoy a taste of
+          paradise.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Cream_Soda.jpg"
+          alt="test"
+        />
+        <h5>Cream Soda</h5>
+        <p>
+          Cream Soda is a sweet and nostalgic soda that's beloved for its
+          comforting vanilla flavor and creamy finish. This classic soft drink
+          is perfect for those who want to indulge in a bit of nostalgia or
+          simply enjoy the familiar taste of vanilla in a fizzy form. It's a
+          timeless choice for a sweet and creamy refreshment. Sip on a Cream
+          Soda and savor its familiar and delightful taste.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Monkey_Gland.jpg"
+          alt="test"
+        />
+        <h5>Monkey Gland</h5>
+        <p>
+          Monkey Gland is a complex and gin-forward cocktail that's perfect for
+          those who appreciate the intricate and aromatic flavors of gin. This
+          sophisticated libation combines gin with orange juice, a touch of
+          absinthe, and grenadine, creating a well-balanced and layered drink
+          with a hint of sweetness and herbal complexity. It's a cocktail that's
+          known for its gin essence and the intriguing fusion of flavors, making
+          it a favorite choice for those who enjoy a mixology masterpiece in
+          their glass. Sip on a Monkey Gland cocktail and embark on a flavorful
+          journey that's sure to tantalize your taste buds.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Lemouroudji.jpg"
+          alt="test"
+        />
+        <h5>Lemouroudji</h5>
+        <p>
+          Lemouroudji is a refreshing and tangy African cocktail that's a
+          delightful blend of hibiscus tea, ginger, and a touch of sweetness.
+          This vibrant drink is popular in many African countries and is known
+          for its unique and invigorating flavors. It's a perfect choice for hot
+          days when you need a cooling and revitalizing beverage. Sip on a
+          Lemouroudji and experience the refreshing taste of Africa.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Tequila_Surprise.jpg"
+          alt="test"
+        />
+        <h5>Tequila Surprise</h5>
+        <p>
+          Tequila Surprise is a zesty and tropical cocktail that's perfect for
+          those who love the vibrant and fruity flavors of tequila. This
+          invigorating libation combines tequila with melon liqueur and fresh
+          pineapple juice, creating a colorful and citrus-infused drink with a
+          balance of tequila kick, melon sweetness, and tropical goodness. It's
+          a cocktail that's known for its tequila essence and the fruity
+          brightness of pineapple and melon, making it a favorite choice for
+          those who want to enjoy a taste of the tropics in their glass. Sip on
+          a Tequila Surprise cocktail and let its vibrant flavors transport you
+          to a sun-soaked paradise.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Gluehwein.jpg"
+          alt="test"
+        />
+        <h5>Gluehwein</h5>
+        <p>
+          Gluehwein is a warm and spiced wine cocktail that's perfect for those
+          who enjoy the comforting and aromatic flavors of mulled wine. This
+          cozy libation combines red wine with citrus fruits, spices like cloves
+          and cinnamon, and a touch of sugar, creating a delightful and warming
+          drink that's perfect for chilly evenings and festive gatherings. It's
+          a cocktail that's known for its rich and spiced aroma, making it a
+          favorite choice for those who want to enjoy a traditional European
+          winter classic. Sip on a Gluehwein cocktail and let its warmth and
+          spices wrap you in a cozy embrace.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Zimadori_Zinger.jpg"
+          alt="test"
+        />
+        <h5>Zimadori Zinger</h5>
+        <p>
+          Zimadori Zinger is a zesty and invigorating cocktail that's perfect
+          for those who crave the lively and tangy flavors of citrus and
+          raspberry. This spirited concoction combines gin with raspberry
+          liqueur and lemon juice, creating a bold and refreshing libation. It's
+          a cocktail that's known for its vibrant colors and lively qualities,
+          making it a great choice for those who enjoy a hint of berry sweetness
+          in their drinks. Sip on a Zimadori Zinger and let the zesty flavors
+          awaken your palate.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Drinking_Chocolate.jpg"
+          alt="test"
+        />
+        <h5>Drinking Chocolate</h5>
+        <p>
+          Drinking Chocolate is a decadent and indulgent beverage that offers
+          the ultimate chocolate experience. This rich and creamy drink is made
+          by melting high-quality chocolate and combining it with milk or cream
+          to create a velvety and luxurious beverage. Sip on a cup of Drinking
+          Chocolate and let the luscious flavors of chocolate envelop your
+          senses in pure bliss.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Tequila_Slammer.jpg"
+          alt="test"
+        />
+        <h5>Tequila Slammer</h5>
+        <p>
+          Tequila Slammer is a lively and fizzy cocktail that's perfect for
+          those who enjoy the spirited and effervescent flavors of tequila. This
+          effervescent libation combines tequila with ginger ale and is
+          typically served as a shooter. It's a cocktail that's known for its
+          tequila kick and the bubbly refreshment of ginger ale, making it a
+          favorite choice for those who want to add some sparkle to their shot
+          experience. Take a Tequila Slammer and let the fizzy fun begin.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Long_vodka.jpg"
+          alt="test"
+        />
+        <h5>Long vodka</h5>
+        <p>
+          A delicious recipe for Long Vodka, with vodka, lime, Angostura®
+          bitters, tonic water and ice. Also lists similar drink recipes.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Caipirissima.jpg"
+          alt="test"
+        />
+        <h5>Caipirissima</h5>
+        <p>
+          Caipirissima is a Brazilian-inspired cocktail that's a delightful
+          blend of cachaça, freshly squeezed lime juice, and sugar. It's a
+          refreshing and tangy drink that captures the essence of Brazilian
+          culture and cuisine. Whether you're sipping it on a sunny beach or at
+          a festive carnival, Caipirissima is the perfect choice for
+          experiencing a taste of Brazil.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Chocolate_Drink.jpg"
+          alt="test"
+        />
+        <h5>Chocolate Drink</h5>
+        <p>
+          Chocolate Drink is a rich and indulgent beverage that satisfies your
+          chocolate cravings. This velvety drink combines the smoothness of
+          chocolate with a touch of sweetness, whether from chocolate liqueur,
+          cocoa powder, or a splash of cream. The result is a decadent and
+          comforting drink that envelops you in the luxurious flavors of
+          chocolate. Sip on a Chocolate Drink and indulge in its rich and
+          luscious goodness.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Kir_Royale.jpg"
+          alt="test"
+        />
+        <h5>Kir Royale</h5>
+        <p>
+          Kir Royale is a sophisticated and sparkling cocktail that's perfect
+          for those who appreciate the elegance of champagne-based drinks. This
+          refined libation combines crème de cassis, a blackcurrant liqueur,
+          with champagne, creating a drink that's both luxurious and bubbly.
+          It's a cocktail that's known for its fruity and effervescent
+          qualities, making it a favorite choice for celebrations and special
+          occasions. Raise a glass of Kir Royale and toast to the finer things
+          in life.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Flander_s_Flake-Out.jpg"
+          alt="test"
+        />
+        <h5>Flander's Flake-Out</h5>
+        <p>
+          Flander's Flake-Out is a cozy and warming cocktail that's perfect for
+          those who enjoy the comforting and soothing qualities of hot drinks.
+          This heartwarming libation combines spiced rum with honey and hot
+          water, creating a drink that's perfect for chilly evenings or when you
+          need to unwind and relax. It's a cocktail that's known for its warmth
+          and honeyed sweetness, making it a favorite choice for cozy nights by
+          the fireplace. Sip on a Flander's Flake-Out and let it warm your soul.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Pina_Colada.jpg"
+          alt="test"
+        />
+        <h5>Pina Colada</h5>
+        <p>
+          Pina Colada is a tropical and creamy cocktail that captures the
+          essence of a Caribbean paradise. It combines the flavors of rum,
+          pineapple juice, coconut cream, and a splash of lime juice. This
+          indulgent and refreshing drink is perfect for sipping by the pool or
+          on a sunny beach. Treat yourself to a Pina Colada and let its tropical
+          flavors transport you to an island getaway.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Big_Red.jpg"
+          alt="test"
+        />
+        <h5>Big Red</h5>
+        <p>
+          Big Red is a sweet and creamy cocktail that's perfect for those who
+          enjoy the comforting and indulgent flavors of cinnamon and cream. This
+          delightful libation combines cinnamon schnapps with cream soda,
+          creating a smooth and dessert-like drink that's reminiscent of the
+          popular soda of the same name. It's a cocktail that's known for its
+          sweetness and the warming spice of cinnamon, making it a favorite
+          choice for those who want a taste of nostalgia in their glass. Sip on
+          a Big Red cocktail and indulge in its creamy goodness.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Rum_Punch.jpg"
+          alt="test"
+        />
+        <h5>Rum Punch</h5>
+        <p>
+          Rum Punch is a tropical delight that transports you to a beachside
+          paradise with every sip. This luscious cocktail combines the rich
+          flavors of both light and dark rum with a medley of fruit juices,
+          including orange, pineapple, and a hint of spice. It's a refreshing
+          and invigorating drink that's perfect for sipping by the pool or under
+          the palm trees. Sip on a Rum Punch and let your taste buds dance to
+          the rhythm of the Caribbean.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Godchild.jpg"
+          alt="test"
+        />
+        <h5>Godchild</h5>
+        <p>
+          Godchild is a sweet and nutty cocktail that's perfect for those who
+          appreciate the indulgent and comforting flavors of amaretto. This
+          delightful libation combines vodka with amaretto, a sweet and nutty
+          Italian liqueur, creating a smooth and flavorful drink with a balance
+          of sweetness and almond richness. It's a cocktail that's known for its
+          sweet and nutty character, making it a favorite choice for those who
+          want to savor the indulgent embrace of amaretto in their glass. Raise
+          a toast to the Godchild cocktail and let its sweetness envelop your
+          senses.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Kurant_Tea.jpg"
+          alt="test"
+        />
+        <h5>Kurant Tea</h5>
+        <p>
+          Kurant Tea is a sophisticated and herbal cocktail that's perfect for
+          those who appreciate the fusion of spirits and tea. This refined
+          libation combines black currant vodka with tea, creating a drink
+          that's both fragrant and complex. It's a cocktail that's known for its
+          herbal notes and fruity undertones, making it a favorite choice for
+          those who enjoy a touch of elegance in their glass. Sip on a Kurant
+          Tea and savor the harmony of spirits and tea.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/French_75.jpg"
+          alt="test"
+        />
+        <h5>French 75</h5>
+        <p>
+          French 75 is a sophisticated and sparkling cocktail that's perfect for
+          those who appreciate the elegance of champagne-based drinks. This
+          refined libation combines gin with champagne and lemon juice, creating
+          a drink that's both luxurious and bubbly. It's a cocktail that's known
+          for its citrusy brightness and effervescent qualities, making it a
+          favorite choice for celebrations and special occasions. Raise a glass
+          of French 75 and toast to the finer things in life.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Wine_Punch.jpg"
+          alt="test"
+        />
+        <h5>Wine Punch</h5>
+        <p>
+          Wine Punch is a wine-based punch that's perfect for entertaining a
+          crowd with its rich and fruity flavors. This flavorful concoction
+          combines red wine with brandy, orange liqueur, and a medley of fruit
+          juices, creating a vibrant and complex drink with a hint of citrus and
+          the warmth of brandy. It's known for its versatility and the ability
+          to elevate any gathering with its aromatic and enticing aromas. Serve
+          up a Wine Punch and let the festivities begin.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Michelada.jpg"
+          alt="test"
+        />
+        <h5>Michelada</h5>
+        <p>
+          Michelada is a zesty and savory beer cocktail that's perfect for those
+          who enjoy the bold and tangy flavors of Mexican cuisine. This spirited
+          concoction combines beer with lime juice, hot sauce, and a variety of
+          savory seasonings, creating a refreshing and spicy drink that's a
+          favorite in many Latin American countries. It's a cocktail that's
+          known for its thirst-quenching qualities and a hint of heat, making it
+          a great choice for those who appreciate the savory side of cocktails.
+          Sip on a Michelada and savor the lively flavors of this
+          South-of-the-border classic.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Monkey_Wrench.jpg"
+          alt="test"
+        />
+        <h5>Monkey Wrench</h5>
+        <p>
+          Monkey Wrench is a bold and spirited cocktail that's perfect for those
+          who appreciate the rich and complex flavors of rum and cognac. This
+          daring libation combines rum, cognac, and orange liqueur, creating a
+          robust and aromatic drink with a touch of sweetness and a hint of
+          citrusy brightness. It's a cocktail that's known for its potent kick
+          and the intriguing fusion of spirits, making it a favorite choice for
+          those who want to explore new dimensions of cocktail complexity. Sip
+          on a Monkey Wrench cocktail and embark on a flavorful journey that's
+          sure to tantalize your taste buds.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Mulled_Wine.jpg"
+          alt="test"
+        />
+        <h5>Mulled Wine</h5>
+        <p>
+          Mulled Wine is a warm and spiced wine cocktail that's perfect for
+          those who enjoy the comforting and aromatic flavors of mulled wine.
+          This cozy libation combines red wine with citrus fruits, spices like
+          cloves and cinnamon, and a touch of sugar, creating a delightful and
+          warming drink that's perfect for chilly evenings and festive
+          gatherings. It's a cocktail that's known for its rich and spiced
+          aroma, making it a favorite choice for those who want to enjoy a
+          traditional European winter classic. Sip on a Mulled Wine cocktail and
+          let its warmth and spices wrap you in a cozy embrace.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Aviation.jpg"
+          alt="test"
+        />
+        <h5>Aviation</h5>
+        <p>
+          Aviation is a floral and citrusy cocktail that features the flavors of
+          gin, maraschino liqueur, lemon juice, and a hint of crème de violette.
+          This elegant and refreshing drink offers a perfect balance of sweet,
+          tart, and floral notes. Sip on an Aviation cocktail and let its
+          delightful flavors soar through your taste buds.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/57_Chevy_with_a_White_License_Plate.jpg"
+          alt="test"
+        />
+        <h5>57 Chevy with a White License Plate</h5>
+        <p>
+          57 Chevy with a White License Plate is a creamy and indulgent cocktail
+          that's perfect for those who enjoy the comforting and dessert-like
+          flavors of cream and amaretto. This delightful libation combines
+          Southern Comfort, a fruit and spice-flavored whiskey liqueur, with
+          amaretto and cream, creating a smooth and velvety drink that's perfect
+          for satisfying your sweet tooth. It's a cocktail that's known for its
+          richness and the indulgent depth of amaretto, making it a favorite
+          choice for those who want to indulge in the soothing embrace of cream
+          and almond liqueur in their glass. Sip on a 57 Chevy with a White
+          License Plate cocktail and let its creamy goodness transport you to a
+          world of dessert-inspired delight.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Van_Vleet.jpg"
+          alt="test"
+        />
+        <h5>Van Vleet</h5>
+        <p>
+          A delicious recipe for Van Vleet, with light rum, maple syrup and
+          lemon juice. Also lists similar drink recipes.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Egg-Nog_-_Classic_Cooked.jpg"
+          alt="test"
+        />
+        <h5>Egg-Nog - Classic Cooked</h5>
+        <p>
+          Egg-Nog - Classic Cooked is a rich and creamy holiday cocktail that's
+          perfect for those who love the comforting and festive flavors of
+          eggnog. This traditional libation combines eggs, milk, sugar, and
+          nutmeg, creating a velvety and indulgent drink with a balance of
+          sweetness, creamy richness, and warm spice. It's a cocktail that's
+          known for its holiday charm and the nostalgic embrace of classic
+          eggnog, making it a favorite choice for celebrating the festive
+          season. Sip on an Egg-Nog - Classic Cooked cocktail and let its
+          holiday spirit fill your heart with joy.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Rusty_Nail.jpg"
+          alt="test"
+        />
+        <h5>Rusty Nail</h5>
+        <p>
+          A delicious recipe for Rusty Nail, with Scotch whisky and Drambuie®
+          Scotch whisky. Also lists similar drink recipes.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/English_Highball.jpg"
+          alt="test"
+        />
+        <h5>English Highball</h5>
+        <p>
+          English Highball is a classic and refreshing cocktail that's perfect
+          for those who appreciate the timeless appeal of Scotch whisky-based
+          drinks. This iconic libation combines Scotch whisky with ginger ale,
+          creating a crisp and invigorating drink with a touch of sweetness and
+          a hint of spicy warmth. It's a cocktail that's known for its Scotch
+          essence and the effervescent refreshment of ginger ale, making it a
+          favorite choice for those who want to enjoy a classic libation with a
+          twist. Sip on an English Highball cocktail and raise a glass to the
+          enduring spirit of this beloved drink.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Vodka_And_Tonic.jpg"
+          alt="test"
+        />
+        <h5>Vodka And Tonic</h5>
+        <p>
+          Vodka And Tonic is a classic and straightforward cocktail that's all
+          about simplicity and refreshment. This no-fuss drink features vodka
+          and tonic water, creating a crisp and effervescent beverage that's
+          easy to make and even easier to enjoy. It's a versatile cocktail
+          that's a timeless choice for those looking for a simple and refreshing
+          sip. Raise a glass of Vodka And Tonic and savor its clean and
+          straightforward taste.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/New_York_Sour.jpg"
+          alt="test"
+        />
+        <h5>New York Sour</h5>
+        <p>
+          New York Sour is a sophisticated and visually stunning cocktail that
+          elevates the classic whiskey sour with a touch of elegance. This
+          well-crafted drink combines the smoothness of whiskey with the
+          tanginess of lemon juice and a touch of sweetness from simple syrup.
+          The addition of a float of red wine on top creates a beautiful layered
+          effect. Sip on a New York Sour and appreciate the artistry of this
+          beloved cocktail.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Tomato_Tang.jpg"
+          alt="test"
+        />
+        <h5>Tomato Tang</h5>
+        <p>
+          Tomato Tang is a zesty and savory cocktail that's perfect for those
+          who enjoy the bold and tangy flavors of tomato. This invigorating
+          libation combines vodka with tomato juice and Worcestershire sauce,
+          creating a bold and savory drink with a hint of spiciness and umami
+          richness. It's a cocktail that's known for its tomato kick and the
+          complex depth of Worcestershire sauce, making it a favorite choice for
+          those who want to enjoy a unique and savory sip. Sip on a Tomato Tang
+          cocktail and let its bold flavors awaken your taste buds.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Avalon.jpg"
+          alt="test"
+        />
+        <h5>Avalon</h5>
+        <p>
+          Avalon is a tropical and fruity cocktail that transports you to a
+          sunny beach with its blend of rum and tropical fruit juices. It is
+          made with white rum, pineapple juice, orange juice, and a splash of
+          grenadine. The result is a vibrant and refreshing drink that captures
+          the essence of paradise. Sit back, relax, and enjoy the taste of the
+          tropics.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Vampiro.jpg"
+          alt="test"
+        />
+        <h5>Vampiro</h5>
+        <p>
+          Vampiro is a bold and fiery cocktail that packs a punch. This vibrant
+          drink features the spirited combination of tequila and tomato juice,
+          complemented by a blend of spicy ingredients, such as hot sauce and
+          chili powder. The result is a savory and spicy cocktail with a
+          tantalizing kick. Sip on a Vampiro and let its bold flavors awaken
+          your taste buds and ignite your inner vampire.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Long_Island_Tea.jpg"
+          alt="test"
+        />
+        <h5>Long Island Tea</h5>
+        <p>
+          Long Island Tea is a potent and notorious cocktail that's famous for
+          its mix of five different spirits and a splash of cola. This iconic
+          drink is known for its strong and boozy character, making it a
+          favorite among those seeking a powerful libation. It's a cocktail
+          that's not for the faint of heart, so sip responsibly and prepare for
+          a memorable evening.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Orange_Scented_Hot_Chocolate.jpg"
+          alt="test"
+        />
+        <h5>Orange Scented Hot Chocolate</h5>
+        <p>
+          Orange Scented Hot Chocolate is a cozy and indulgent treat that
+          combines the rich flavors of hot chocolate with a hint of orange zest.
+          The velvety smoothness of the chocolate, combined with the citrusy
+          aroma of orange, creates a comforting and luxurious drink. Top it off
+          with a dollop of whipped cream for an extra touch of decadence. Wrap
+          your hands around a mug of Orange Scented Hot Chocolate and let its
+          warmth and flavors envelop you in pure bliss.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Orange_Oasis.jpg"
+          alt="test"
+        />
+        <h5>Orange Oasis</h5>
+        <p>
+          Orange Oasis is a refreshing and citrusy cocktail that transports you
+          to a sunny oasis. This delightful drink combines the bright flavors of
+          orange liqueur, vodka, and a splash of citrus juice. The result is a
+          vibrant and zesty cocktail that quenches your thirst and uplifts your
+          spirits. Sip on an Orange Oasis and let the citrusy notes whisk you
+          away to a tropical paradise.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Masala_Chai.jpg"
+          alt="test"
+        />
+        <h5>Masala Chai</h5>
+        <p>
+          Masala Chai is a warm and aromatic cocktail that's perfect for those
+          who enjoy the soothing and spicy flavors of chai tea. This comforting
+          libation combines spiced rum with brewed chai tea, creating a cozy and
+          flavor-packed drink with a touch of sweetness and a hint of warming
+          spices. It's a cocktail that's known for its chai essence and the
+          comforting qualities of tea, making it a favorite choice for those who
+          want to curl up with a flavorful and aromatic sip. Sip on a Masala
+          Chai cocktail and let its spices envelop you in a warm and soothing
+          embrace.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Pink_Moon.jpg"
+          alt="test"
+        />
+        <h5>Pink Moon</h5>
+        <p>
+          Pink Moon is a delicate and floral cocktail that evokes the
+          enchantment of a moonlit garden. This elegant drink combines the
+          botanical essence of gin with the delicate sweetness of elderflower
+          liqueur and a splash of citrus. The result is a sophisticated and
+          fragrant cocktail with a subtle pink hue. Sip on a Pink Moon and let
+          its floral notes transport you to a serene and magical moonlit night.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Tom_Collins.jpg"
+          alt="test"
+        />
+        <h5>Tom Collins</h5>
+        <p>
+          Tom Collins is a classic and refreshing cocktail that's perfect for
+          those who appreciate the timeless appeal of gin-based drinks. This
+          iconic libation combines gin with fresh lemon juice, simple syrup, and
+          soda water, creating a crisp and invigorating drink with a zesty kick
+          and effervescent qualities. It's a cocktail that's known for its gin
+          essence and the zing of lemon, making it a favorite choice for those
+          who want to enjoy a classic with a twist. Sip on a Tom Collins and
+          raise a glass to the enduring spirit of this beloved drink.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Mocha-Berry.jpg"
+          alt="test"
+        />
+        <h5>Mocha-Berry</h5>
+        <p>
+          Mocha-Berry is a creamy and indulgent cocktail that's perfect for
+          those who enjoy the comforting and dessert-like flavors of chocolate
+          and coffee. This delightful libation combines chocolate liqueur with
+          coffee liqueur and cream, creating a smooth and velvety drink that's
+          perfect for satisfying your sweet tooth. It's a cocktail that's known
+          for its richness and the indulgent depth of chocolate and coffee,
+          making it a favorite choice for those who want to indulge in the
+          soothing embrace of these classic flavors in their glass. Sip on a
+          Mocha-Berry cocktail and let its creamy goodness transport you to a
+          world of dessert-inspired delight.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Quick-sand.jpg"
+          alt="test"
+        />
+        <h5>Quick-sand</h5>
+        <p>
+          Quick-sand is a tropical and fruity cocktail that captures the essence
+          of a sandy beach getaway. It combines the smoothness of rum with the
+          vibrant flavors of orange juice and pineapple juice. This refreshing
+          drink is perfect for sipping by the pool or as a festive treat during
+          summer parties. Close your eyes, take a sip of a Quick-sand cocktail,
+          and let the tropical paradise unfold.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Turf_Cocktail.jpg"
+          alt="test"
+        />
+        <h5>Turf Cocktail</h5>
+        <p>
+          Turf Cocktail is a classic and gin-forward cocktail that's perfect for
+          those who appreciate the timeless appeal of gin-based drinks. This
+          iconic libation combines gin with dry vermouth and maraschino liqueur,
+          creating a crisp and well-balanced drink with a touch of sweetness and
+          a hint of herbal complexity. It's a cocktail that's known for its gin
+          essence and the subtle richness of maraschino liqueur, making it a
+          favorite choice for those who want to enjoy a classic libation with a
+          twist. Sip on a Turf Cocktail and raise a glass to the enduring spirit
+          of this beloved drink.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Gagliardo.jpg"
+          alt="test"
+        />
+        <h5>Gagliardo</h5>
+        <p>
+          Gagliardo is a fruity and refreshing cocktail that's perfect for those
+          who love the vibrant and bittersweet flavors of Aperol. This
+          invigorating libation combines Aperol with fresh pineapple juice and
+          zesty lemon juice, creating a colorful and citrus-infused drink with a
+          balance of bitterness, sweetness, and tartness. It's a cocktail that's
+          known for its Aperol essence and the bright kick of citrus, making it
+          a favorite choice for those who want to enjoy a bittersweet sip. Sip
+          on a Gagliardo cocktail and let its vibrant flavors awaken your taste
+          buds.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Quentin.jpg"
+          alt="test"
+        />
+        <h5>Quentin</h5>
+        <p>
+          Quentin is a refreshing cocktail that combines the flavors of citrus
+          and mint. It is made with fresh lime juice, orange liqueur, and a
+          touch of mint syrup. The drink is served over ice and garnished with a
+          sprig of mint. It is the perfect beverage for a hot summer day.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Zima_Blaster.jpg"
+          alt="test"
+        />
+        <h5>Zima Blaster</h5>
+        <p>
+          Zima Blaster is a colorful and fruity cocktail that's perfect for
+          those who enjoy playful and visually stunning drinks. This vibrant
+          libation combines citrus vodka with Blue Curaçao and grenadine,
+          creating a dazzling and layered drink with a striking visual effect.
+          It's a cocktail that's all about making a splash and leaving a
+          memorable impression. Take a Zima Blaster cocktail and let the waves
+          of flavor and color wash over your taste buds.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Tuxedo_Cocktail.jpg"
+          alt="test"
+        />
+        <h5>Tuxedo Cocktail</h5>
+        <p>
+          Tuxedo Cocktail is a classic and sophisticated cocktail that's perfect
+          for those who appreciate the timeless elegance of gin-based drinks.
+          This iconic libation combines gin with dry vermouth, maraschino
+          liqueur, and a touch of absinthe, creating a well-balanced and
+          aromatic drink with a hint of herbal complexity and botanical beauty.
+          It's a cocktail that's known for its gin essence and the subtle
+          richness of maraschino liqueur, making it a favorite choice for those
+          who want to enjoy a classic libation with a twist. Sip on a Tuxedo
+          Cocktail and raise a glass to the enduring spirit of this beloved
+          drink.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Flaming_Lamborghini.jpg"
+          alt="test"
+        />
+        <h5>Flaming Lamborghini</h5>
+        <p>
+          Flaming Lamborghini is a dazzling and fiery cocktail that's perfect
+          for those who enjoy a dramatic and visually stunning drinking
+          experience. This impressive libation combines multiple liqueurs and
+          sets them on fire to create a blazing spectacle. It's a cocktail
+          that's known for its fiery presentation and complex flavors, making it
+          a favorite choice for those who appreciate the theatrics of mixology.
+          Sip on a Flaming Lamborghini and watch the flames dance as you savor
+          its bold and fiery taste.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Yoghurt_Cooler.jpg"
+          alt="test"
+        />
+        <h5>Yoghurt Cooler</h5>
+        <p>
+          Yoghurt Cooler is a refreshing and creamy cocktail that combines the
+          tanginess of yogurt, the fruity flavors of fruit juice, and the
+          effervescence of soda. It's a light and refreshing drink that's
+          perfect for hot summer days or as a healthy alternative to heavier
+          cocktails. Sip on a Yoghurt Cooler and enjoy the cooling and
+          rejuvenating qualities of this delightful drink.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Stone_Sour.jpg"
+          alt="test"
+        />
+        <h5>Stone Sour</h5>
+        <p>
+          Stone Sour is a tangy and citrusy cocktail that's perfect for those
+          who enjoy the lively and refreshing flavors of citrus fruits. This
+          spirited concoction combines whiskey with orange liqueur and lemon
+          juice, creating a zesty and invigorating libation. It's a cocktail
+          that's known for its bright and tangy qualities, making it a favorite
+          choice for those who love a citrus kick. Sip on a Stone Sour and
+          embrace the zestiness of this classic drink.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Long_Island_Iced_Tea.jpg"
+          alt="test"
+        />
+        <h5>Long Island Iced Tea</h5>
+        <p>
+          Long Island Iced Tea is a potent and notorious cocktail that's famous
+          for its mix of five different spirits and a splash of cola. This
+          iconic drink is known for its strong and boozy character, making it a
+          favorite among those seeking a powerful libation. It's a cocktail
+          that's not for the faint of heart, so sip responsibly and prepare for
+          a memorable evening.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Greyhound.jpg"
+          alt="test"
+        />
+        <h5>Greyhound</h5>
+        <p>
+          Greyhound is a zesty and refreshing cocktail that's perfect for those
+          who enjoy the bright and tangy flavors of grapefruit. This
+          invigorating libation combines vodka with fresh grapefruit juice,
+          creating a crisp and citrusy drink with a bold grapefruit kick. It's a
+          cocktail that's known for its simplicity and the lip-smacking zing of
+          grapefruit, making it a favorite choice for those who appreciate a
+          vibrant and thirst-quenching sip. Sip on a Greyhound cocktail and let
+          its citrusy goodness awaken your taste buds.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/A._J..jpg"
+          alt="test"
+        />
+        <h5>A. J.</h5>
+        <p>
+          A. J. is a vibrant and citrusy cocktail that combines the flavors of
+          apple schnapps, cranberry juice, and lime juice. It is made by shaking
+          all the ingredients together with ice and straining it into a glass.
+          The result is a refreshing and tangy drink with a beautiful red color.
+          Sip on this delightful cocktail and let the flavors transport you to
+          an orchard in full bloom.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Algonquin.jpg"
+          alt="test"
+        />
+        <h5>Algonquin</h5>
+        <p>
+          Algonquin is a sophisticated cocktail that combines the flavors of rye
+          whiskey, dry vermouth, and pineapple juice. This well-balanced drink
+          offers a unique blend of sweet, spicy, and fruity notes, creating a
+          delightful drinking experience. Sip on an Algonquin cocktail and let
+          its refined flavors whisk you away to a world of elegance.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Frisco_Sour.jpg"
+          alt="test"
+        />
+        <h5>Frisco Sour</h5>
+        <p>
+          Frisco Sour is a zesty and whiskey-forward cocktail that's perfect for
+          those who enjoy the bold and tangy flavors of bourbon. This spirited
+          libation combines bourbon with lemon juice and a touch of sweetness,
+          creating a bright and refreshing drink with a hint of citrusy
+          tartness. It's a cocktail that's known for its whiskey kick and the
+          zing of lemon, making it a favorite choice for those who appreciate a
+          lively and invigorating sip. Sip on a Frisco Sour and let its zesty
+          flavors awaken your taste buds.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Limeade.jpg"
+          alt="test"
+        />
+        <h5>Limeade</h5>
+        <p>
+          Limeade is a refreshing and tangy non-alcoholic drink that quenches
+          your thirst and invigorates your senses. This simple yet delightful
+          beverage combines freshly squeezed lime juice with a touch of
+          sweetness from sugar, topped with sparkling water for a bubbly finish.
+          The result is a vibrant and citrusy drink that provides a burst of
+          refreshment. Sip on a Limeade and enjoy its zesty and thirst-quenching
+          qualities.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/English_Rose_Cocktail.jpg"
+          alt="test"
+        />
+        <h5>English Rose Cocktail</h5>
+        <p>
+          English Rose Cocktail is a floral and delicate cocktail that's perfect
+          for those who appreciate the gentle and aromatic flavors of gin. This
+          elegant libation combines gin with apricot brandy and fresh lemon
+          juice, creating a harmonious and fragrant drink with a balance of
+          botanicals, apricot sweetness, and zesty tartness. It's a cocktail
+          that's known for its gin essence and the subtle richness of apricot
+          brandy, making it a favorite choice for those who want to enjoy a
+          refined and gin-infused sip. Sip on an English Rose Cocktail and let
+          its floral charm delight your senses.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Lunch_Box.jpg"
+          alt="test"
+        />
+        <h5>Lunch Box</h5>
+        <p>
+          Lunch Box is a playful and nostalgic drink that's perfect for reliving
+          the carefree days of youth. This fun concoction combines beer with
+          amaretto and a splash of orange juice for a surprising and delightful
+          combination of flavors. It's a drink that's sure to bring a smile to
+          your face and transport you back to the good old days. Sip on a Lunch
+          Box and enjoy the nostalgia in a glass.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Imperial_Fizz.jpg"
+          alt="test"
+        />
+        <h5>Imperial Fizz</h5>
+        <p>
+          Imperial Fizz is a refreshing and fizzy cocktail that combines the
+          flavors of gin, lime juice, sugar syrup, frothy egg white, and
+          sparkling soda water. This invigorating drink offers a perfect balance
+          of citrusy, sweet, and bubbly notes. Sip on an Imperial Fizz and let
+          its effervescent flavors lift your spirits.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Lone_Tree_Cocktail.jpg"
+          alt="test"
+        />
+        <h5>Lone Tree Cocktail</h5>
+        <p>
+          Lone Tree Cocktail is a fruity and refreshing drink that's perfect for
+          those who enjoy the delightful combination of gin and elderflower
+          liqueur. This invigorating libation blends gin with elderflower
+          liqueur, freshly squeezed lemon juice, and a splash of soda, creating
+          a vibrant and citrusy concoction. It's known for its crisp and
+          revitalizing character, making it an excellent choice for warm days or
+          casual gatherings. Sip on a Lone Tree Cocktail and let its fruity and
+          effervescent charm transport you to a peaceful orchard.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Fuzzy_Asshole.jpg"
+          alt="test"
+        />
+        <h5>Fuzzy Asshole</h5>
+        <p>
+          Fuzzy Asshole is a cheeky and fruity cocktail that's perfect for those
+          who enjoy playful and colorful drinks. This lighthearted libation
+          combines peach schnapps with orange juice, creating a sweet and tangy
+          sip that's as fun as its name suggests. It's a cocktail that's all
+          about letting loose and enjoying the moment. Sip on a Fuzzy Asshole
+          and let the fruity fun begin.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Pisco_Sour.jpg"
+          alt="test"
+        />
+        <h5>Pisco Sour</h5>
+        <p>
+          Pisco Sour is a classic and refreshing cocktail that originates from
+          Peru and Chile. It combines the flavors of pisco (a grape brandy),
+          lime juice, simple syrup, and frothy egg white. This tangy and frothy
+          drink is a perfect balance of sweet, sour, and creamy notes. Sip on a
+          Pisco Sour and transport yourself to the vibrant streets of South
+          America.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Veteran.jpg"
+          alt="test"
+        />
+        <h5>Veteran</h5>
+        <p>
+          Veteran is a robust and full-bodied cocktail that appeals to whiskey
+          enthusiasts. This rich drink combines the bold flavors of whiskey with
+          the deep richness of coffee liqueur and a touch of sweetness. The
+          result is a smooth and indulgent cocktail that showcases the complex
+          flavors of the whiskey. Sip on a Veteran and appreciate the depth and
+          character of this satisfying and spirit-forward cocktail.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/747.jpg"
+          alt="test"
+        />
+        <h5>747</h5>
+        <p>
+          747 is a classic and aviation-themed cocktail that's perfect for those
+          who appreciate the timeless appeal of gin-based drinks. This iconic
+          libation combines gin with maraschino liqueur and lemon juice,
+          creating a crisp and well-balanced drink with a hint of sweetness and
+          a zesty kick. It's a cocktail that's known for its gin essence and the
+          bright tang of lemon, making it a favorite choice for those who want
+          to take their taste buds on a journey through the skies. Sip on a 747
+          cocktail and let your palate soar with delight.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Lone_Tree_Cooler.jpg"
+          alt="test"
+        />
+        <h5>Lone Tree Cooler</h5>
+        <p>
+          Lone Tree Cooler is a refreshing and invigorating drink that's perfect
+          for hot summer days. This revitalizing cooler combines gin with
+          elderflower liqueur and a splash of citrus juice for a burst of
+          flavor. It's a drink that's as crisp and refreshing as a cool breeze
+          on a sunny day. Sip on a Lone Tree Cooler and enjoy the vibrant taste
+          of summer.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Frose.jpg"
+          alt="test"
+        />
+        <h5>Frosé</h5>
+        <p>
+          Frosé is a frozen and icy cocktail that's perfect for those who enjoy
+          the refreshing qualities of a frozen drink. This delightful concoction
+          combines rosé wine with strawberry puree, creating a slushy and fruity
+          libation. It's a cocktail that's ideal for cooling down on hot summer
+          days or for indulging in a frozen treat with a grown-up twist. Sip on
+          a Frosé and embrace the frosty deliciousness.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Broadside.jpg"
+          alt="test"
+        />
+        <h5>Broadside</h5>
+        <p>
+          Broadside is a bold and robust cocktail that's perfect for those who
+          appreciate the strength and depth of navy strength rum. This powerful
+          libation combines navy strength rum with honey syrup and bitters,
+          creating a cocktail that's full of character and intensity. It's a
+          drink that's known for its bold flavors and rich sweetness, making it
+          a favorite choice for rum enthusiasts. Sip on a Broadside and savor
+          its potent and complex profile.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/The_Philosopher.jpg"
+          alt="test"
+        />
+        <h5>The Philosopher</h5>
+        <p>
+          The Philosopher is a complex and aromatic cocktail that's perfect for
+          those who appreciate layered and intriguing flavors in their drinks.
+          This thought-provoking libation combines gin with Aperol, elderflower
+          liqueur, and fresh lemon juice, creating a harmonious and fragrant
+          drink with a balance of bitterness, floral sweetness, and zesty
+          tartness. It's a cocktail that's known for its unique combination of
+          ingredients and the enigmatic interplay of flavors, making it a
+          favorite choice for those who want to explore the depths of cocktail
+          craftsmanship. Sip on The Philosopher cocktail and let its complexity
+          delight your palate.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Affair.jpg"
+          alt="test"
+        />
+        <h5>Affair</h5>
+        <p>
+          Affair is a seductive and sophisticated cocktail that combines a mix
+          of spirits and fruit juices. It is made with vodka, peach schnapps,
+          cranberry juice, and orange juice. The combination of flavors creates
+          a balanced and tantalizing drink that is sure to impress. It is best
+          enjoyed in the company of someone special.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Horse_s_Neck.jpg"
+          alt="test"
+        />
+        <h5>Horse's Neck</h5>
+        <p>
+          Horse's Neck is a classic and refreshing highball cocktail that's a
+          timeless favorite. This simple yet delightful drink combines whiskey
+          with ginger ale and is garnished with a long, spiraled twist of lemon
+          peel. It's a drink that's as elegant as it is easy to make, making it
+          a popular choice for those who appreciate the clean and crisp flavors
+          of a highball. Raise a glass of Horse's Neck and enjoy its classic
+          charm.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Rum_Runner.jpg"
+          alt="test"
+        />
+        <h5>Rum Runner</h5>
+        <p>
+          Rum Runner is a tropical delight that transports you to a beachside
+          paradise with every sip. This luscious cocktail combines the rich
+          flavors of both light and dark rum with a medley of fruit juices,
+          including orange, pineapple, and blackberry. A touch of banana liqueur
+          adds a delightful sweetness and depth of flavor. Sip on a Rum Runner
+          and let your taste buds dance to the rhythm of the Caribbean.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Irish_Curdling_Cow.jpg"
+          alt="test"
+        />
+        <h5>Irish Curdling Cow</h5>
+        <p>
+          Irish Curdling Cow is a creamy and boozy cocktail that features the
+          smoothness of Irish cream, the richness of milk, and a touch of coffee
+          liqueur for a hint of bitterness. It's a comforting drink that is
+          perfect for cozy evenings or as a dessert cocktail. Sip on an Irish
+          Curdling Cow and let its creamy indulgence transport you to a state of
+          pure bliss.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Lassi_-_Sweet.jpg"
+          alt="test"
+        />
+        <h5>Lassi - Sweet</h5>
+        <p>
+          Lassi - Sweet is a classic Indian yogurt-based beverage that delights
+          the palate with its creamy and sweet flavors. This refreshing drink is
+          made by blending yogurt with sugar, cardamom, and a touch of
+          rosewater. It's a delightful and cooling treat that's perfect for hot
+          summer days or as a complement to spicy Indian dishes. Sip on a Sweet
+          Lassi and savor the traditional taste of India.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Coffee-Vodka.jpg"
+          alt="test"
+        />
+        <h5>Coffee-Vodka</h5>
+        <p>
+          A delicious recipe for Coffee-Vodka, with vodka and coffee. Also lists
+          similar drink recipes.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Honey_Bee.jpg"
+          alt="test"
+        />
+        <h5>Honey Bee</h5>
+        <p>
+          Honey Bee is a sweet and delightful cocktail that captures the essence
+          of nature's sweetness. This charming drink combines the smoothness of
+          honey with the tanginess of lemon juice and a splash of bourbon for a
+          touch of warmth. The result is a balanced and flavorful cocktail that
+          showcases the natural sweetness of honey. Sip on a Honey Bee and let
+          its sunny flavors brighten your day.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Ruby_Tuesday.jpg"
+          alt="test"
+        />
+        <h5>Ruby Tuesday</h5>
+        <p>
+          A delicious recipe for Ruby Tuesday, with gin, cranberry juice and
+          grenadine syrup. Also lists similar drink recipes.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Afternoon.jpg"
+          alt="test"
+        />
+        <h5>Afternoon</h5>
+        <p>
+          Afternoon is a refreshing and herbal cocktail that features the
+          flavors of gin, lime juice, elderflower cordial, and fizzy soda water.
+          This invigorating drink offers a perfect balance of citrusy, floral,
+          and bubbly notes. Sip on an Afternoon cocktail and let its
+          rejuvenating flavors transport you to a peaceful garden.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Campari_Beer.jpg"
+          alt="test"
+        />
+        <h5>Campari Beer</h5>
+        <p>
+          Campari Beer is a bitter and refreshing beer cocktail that's perfect
+          for those who appreciate the bold and distinctive flavor of Campari.
+          This invigorating libation combines Campari with a splash of soda and
+          a crisp beer, resulting in a tangy and effervescent drink with a hint
+          of bitterness. It's known for its unique taste profile and the ability
+          to awaken your palate with every sip. Enjoy a Campari Beer and embrace
+          the boldness of this distinctive cocktail.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Gin_Squirt.jpg"
+          alt="test"
+        />
+        <h5>Gin Squirt</h5>
+        <p>
+          Gin Squirt is a zesty and gin-forward cocktail that's perfect for
+          those who appreciate the bright and citrusy flavors of gin. This
+          invigorating libation combines gin with fresh grapefruit juice and
+          soda water, creating a crisp and effervescent drink with a bold
+          grapefruit kick and botanical beauty. It's a cocktail that's known for
+          its gin essence and the zing of grapefruit, making it a favorite
+          choice for those who want to enjoy a refreshing and citrusy sip. Sip
+          on a Gin Squirt cocktail and let its vibrant flavors awaken your taste
+          buds.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Jitterbug.jpg"
+          alt="test"
+        />
+        <h5>Jitterbug</h5>
+        <p>
+          Jitterbug is a lively and energetic cocktail that will put a spring in
+          your step. This invigorating drink combines the smoothness of vodka
+          with the rich flavors of coffee liqueur and creamy Irish cream. The
+          result is a delightful blend of coffee and cream with a subtle kick of
+          vodka. Sip on a Jitterbug and let its lively flavors and creamy
+          texture awaken your senses and keep you dancing all night long.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Frappe.jpg"
+          alt="test"
+        />
+        <h5>Frappé</h5>
+        <p>
+          Frappé is a cool and creamy coffee cocktail that's perfect for those
+          who enjoy the invigorating and indulgent flavors of coffee. This
+          delightful libation combines instant coffee with milk and sugar,
+          creating a refreshing and frothy drink that's perfect for a caffeine
+          boost on a hot day. It's a cocktail that's known for its coffee kick
+          and the soothing qualities of milk, making it a favorite choice for
+          those who want to cool down with a delightful coffee treat. Sip on a
+          Frappé cocktail and savor the creamy goodness of this classic coffee
+          creation.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Quaker_s_Cocktail.jpg"
+          alt="test"
+        />
+        <h5>Quaker's Cocktail</h5>
+        <p>
+          Quaker's Cocktail is a creamy and nutty cocktail that features the
+          warm flavors of whiskey, amaretto liqueur, and rich cream. The
+          combination of these ingredients creates a smooth and indulgent drink
+          with a hint of nuttiness and a sprinkle of cinnamon on top. This
+          delightful cocktail is perfect for cozy evenings or as a special treat
+          during the holiday season. Raise a glass and enjoy the comforting
+          flavors of a Quaker's Cocktail.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Apello.jpg"
+          alt="test"
+        />
+        <h5>Apello</h5>
+        <p>
+          Apello is a citrusy and refreshing cocktail that showcases the vibrant
+          flavors of vodka, grapefruit juice, and lime juice. It's a zesty and
+          invigorating drink that is perfect for hot summer days or as a lively
+          aperitif. Sip on an Apello cocktail and let its bright and tangy
+          flavors awaken your senses.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Kiwi_Papaya_Smoothie.jpg"
+          alt="test"
+        />
+        <h5>Kiwi Papaya Smoothie</h5>
+        <p>
+          Kiwi Papaya Smoothie is a fruity and tropical smoothie that's perfect
+          for those who love the refreshing and exotic flavors of tropical
+          fruits. This delightful blend combines kiwi, papaya, and yogurt,
+          creating a creamy and revitalizing drink that's perfect for breakfast
+          or as a midday pick-me-up. It's a smoothie that's known for its
+          vibrant colors and tropical vibes, making it a favorite choice for
+          those who enjoy a taste of the tropics. Sip on a Kiwi Papaya Smoothie
+          and let the fruity goodness brighten your day.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Caipirinha.jpg"
+          alt="test"
+        />
+        <h5>Caipirinha</h5>
+        <p>
+          Caipirinha is a classic Brazilian cocktail that's known for its
+          refreshing and citrusy flavors. This iconic libation combines cachaça,
+          a Brazilian sugarcane spirit, with fresh lime and sugar, creating a
+          zesty and invigorating drink with a touch of sweetness. It's known for
+          its simplicity and the ability to transport you to the lively streets
+          of Brazil with every sip. Sip on a Caipirinha and experience the
+          vibrant spirit of this beloved cocktail.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Ipamena.jpg"
+          alt="test"
+        />
+        <h5>Ipamena</h5>
+        <p>
+          Ipamena is a refreshing and non-alcoholic Brazilian beverage that
+          captures the flavors of lime, sugar, and ginger ale. This zesty and
+          invigorating drink is perfect for those looking for a non-alcoholic
+          option that still packs a punch of flavor. Enjoy the vibrant and
+          citrusy taste of Ipamena and let it refresh and revitalize you.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/110_in_the_shade.jpg"
+          alt="test"
+        />
+        <h5>110 in the shade</h5>
+        <p>
+          110 in the shade is a refreshing and cooling cocktail that combines
+          the flavors of tequila, lime juice, mint, and fizzy soda water. This
+          invigorating drink offers a perfect balance of citrusy, herbal, and
+          bubbly notes. Sip on a 110 in the shade cocktail and let its
+          refreshing flavors quench your thirst on a hot day.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Zinger.jpg"
+          alt="test"
+        />
+        <h5>Zinger</h5>
+        <p>
+          Zinger is a zesty and invigorating cocktail that's perfect for those
+          who crave the lively and spicy flavors of ginger. This spirited
+          concoction combines gin with ginger liqueur and citrus juice, creating
+          a bold and refreshing libation. It's a cocktail that's known for its
+          lively and invigorating qualities, making it a great choice for those
+          who enjoy a hint of spice in their drinks. Sip on a Zinger and let the
+          zesty flavors awaken your palate.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Queen_Bee.jpg"
+          alt="test"
+        />
+        <h5>Queen Bee</h5>
+        <p>
+          Queen Bee is a refreshing and floral cocktail that showcases the
+          delicate flavors of gin, honey syrup, and lemon juice. The combination
+          of botanical gin, sweet honey syrup, and tangy lemon juice creates a
+          harmonious balance of flavors. This elegant drink is perfect for those
+          who appreciate the subtle complexities of a well-crafted cocktail.
+          Raise a glass to the Queen Bee and enjoy the buzz of its delightful
+          flavors.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/City_Slicker.jpg"
+          alt="test"
+        />
+        <h5>City Slicker</h5>
+        <p>
+          City Slicker is a cosmopolitan and sophisticated cocktail that's
+          perfect for those who appreciate the finer things in life. This
+          elegant drink combines bourbon with vermouth and a touch of bitters,
+          creating a rich and complex flavor profile. It's a cocktail that's
+          best enjoyed in a dimly lit lounge or a swanky bar, where you can
+          savor every sip in style. Raise a glass of City Slicker and toast to
+          the urban allure of the city.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Jamaica_Kiss.jpg"
+          alt="test"
+        />
+        <h5>Jamaica Kiss</h5>
+        <p>
+          Jamaica Kiss is a sweet and tangy cocktail that brings a taste of the
+          Caribbean to your glass. It is made with Jamaican rum, lime juice,
+          grenadine, and a splash of soda water. The combination of flavors
+          creates a tropical and refreshing drink that is perfect for sipping on
+          a hot summer day. Close your eyes, take a sip, and let the flavors
+          transport you to a Jamaican beach.
+        </p>
+      </li>
+      <li class="coctail-item">
+        <img
+          src="https://ftp.goit.study/img/drinkify/recipes/Passion_Fruit_Martini.jpg"
+          alt="test"
+        />
+        <h5>Passion Fruit Martini</h5>
+        <p>
+          Passion Fruit Martini is a fruity and tropical cocktail that captures
+          the exotic flavors of passion fruit. It combines the flavors of vodka,
+          passion fruit puree, passion fruit liqueur, and a hint of zesty lime
+          juice. This vibrant and indulgent drink offers a perfect balance of
+          sweet, tangy, and tropical notes. Sip on a Passion Fruit Martini and
+          let its enticing flavors transport you to a beachside paradise.
+        </p>
+      </li>
+    </ul>
   </body>
 </html>
