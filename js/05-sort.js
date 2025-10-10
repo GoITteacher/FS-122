@@ -10,48 +10,78 @@
  * - приводить елементи до рядка і сортує за [Unicode](https://unicode-table.com/en/)
  */
 
-const numbers = [1, 9, 6, 2, 3];
+// const numbers = [1, 9, 6, 2, 3];
 
-const sorted = numbers;
-console.log("sorted ", sorted);
+// const res = numbers.toSorted((a, b) => {
+//   return b - a;
+// });
+// console.log(res);
 
-const letters = ["b", "B", "a", "A"];
-console.log("letters", letters);
+// const sorted = numbers;
+// // console.log('sorted ', sorted);
 
-/**
- * compareFunction - функція порівняння (callback)
- * Елементи масиву сортуються відповідно до її значення, що повертається
- */
+// const letters = ['b', 'B', 'a', 'A'];
+// // console.log('letters', letters);
 
-console.log(
-  numbers.toSorted((curEl, nextEl) => {
-    return nextEl - curEl;
-  })
-);
+// /**
+//  * compareFunction - функція порівняння (callback)
+//  * Елементи масиву сортуються відповідно до її значення, що повертається
+//  */
 
-const descSortedNumbers = numbers;
-const ascSortedNumbers = numbers;
-console.log("descSortedNumbers", descSortedNumbers);
-console.log("ascSortedNumbers", ascSortedNumbers);
+// console.log(
+//   numbers.toSorted((curEl, nextEl) => {
+//     return nextEl - curEl;
+//   }),
+// );
 
-/**
- * Сортування масиву об'єктів
- */
-const players = [
-  { id: "player-1", name: "Mango", timePlayed: 310, online: false },
-  { id: "player-2", name: "Poly", timePlayed: 470, online: true },
-  { id: "player-3", name: "Aiwi", timePlayed: 230, online: true },
-  { id: "player-4", name: "Ajax", timePlayed: 150, online: false },
-  { id: "player-5", name: "Chelsey", timePlayed: 80, online: true },
-];
+// const descSortedNumbers = numbers;
+// const ascSortedNumbers = numbers;
+// console.log('descSortedNumbers', descSortedNumbers);
+// console.log('ascSortedNumbers', ascSortedNumbers);
 
-// За ігровим часом
-const sortedByBestPlayers = players;
-console.table(sortedByBestPlayers);
+// /**
+//  * Сортування масиву об'єктів
+//  */
 
-const sortedByWorstPlayers = players;
-console.table(sortedByWorstPlayers);
+// const players = [
+//   { id: 'player-1', name: 'Mango', timePlayed: 310, online: false },
+//   { id: 'player-2', name: 'Poly', timePlayed: 470, online: true },
+//   { id: 'player-3', name: 'Aiwi', timePlayed: 230, online: true },
+//   { id: 'player-4', name: 'Ajax', timePlayed: 150, online: false },
+//   { id: 'player-5', name: 'Chelsey', timePlayed: 80, online: true },
+// ];
 
-// По первой букве имени
-const byName = players;
-console.table(byName);
+// const res = players.toSorted((b, a) => a.timePlayed - b.timePlayed);
+// const res = players.toSorted((a, b) => a.name.length - b.name.length);
+// const res = players.toSorted((b, a) => a.online - b.online);
+
+// console.table(res);
+// // За ігровим часом
+// const sortedByBestPlayers = players;
+// console.table(sortedByBestPlayers);
+
+// const sortedByWorstPlayers = players;
+// console.table(sortedByWorstPlayers);
+
+// // По первой букве имени
+// const byName = players;
+// console.table(byName);
+
+//!======================================================
+// const players = [
+//   { id: 'player-1', name: 'Mango', timePlayed: 310, online: false },
+//   { id: 'player-2', name: 'Poly', timePlayed: 470, online: true },
+//   { id: 'player-3', name: 'Aiwi', timePlayed: 230, online: true },
+//   { id: 'player-4', name: 'Ajax', timePlayed: 150, online: false },
+//   { id: 'player-5', name: 'Chelsey', timePlayed: 80, online: true },
+// ];
+
+// const res = players
+//   .toSorted((a, b) => {
+//     return a.name.localeCompare(b.name);
+//   })
+//   .toSorted((b, a) => {
+//     return a.online - b.online;
+//   });
+
+// console.table(res);
