@@ -92,3 +92,38 @@ const transactionHistory = [
 ];
 
 const tableEl = document.querySelector('.js-transaction-table');
+
+//!======================================================
+
+/*  
+
+id: '79ccb1dd-6544-47cc-9a40-ea453985a748',
+    amount: '788.40',
+    date: '2012-02-01T22:00:00.000Z',
+    business: 'Ullrich, Shields and Koelpin',
+    name: 'Personal Loan Account 8318',
+    type: 'invoice',
+    account: '07081761',
+    */
+
+function transactionTemplate(obj) {
+  let className = obj.amount < 500 ? 'invalid-item' : 'valid-item';
+
+  return `<tr class="table-item ${className}">
+  <td>${obj.id.slice(0, 3)}...</td>
+  <td>${obj.amount}</td>
+  <td>${obj.date.slice(0, 10)}</td>
+  <td>${obj.business}</td>
+  <td>${obj.type}</td>
+  <td>${obj.name}</td>
+  <td>${obj.account}</td>
+</tr>`;
+}
+
+function transactionsTemplate(arr) {
+  return arr.map(transactionTemplate).join('\n\n');
+}
+
+const markup = transactionsTemplate(transactionHistory);
+
+tableEl.lastElementChild.innerHTML = markup;

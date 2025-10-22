@@ -67,10 +67,41 @@ body {
   text-align: center;
 }
 
-.withdraw {
+.active-items {
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.color-item {
+  list-style-type: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.withdrawal {
   background-color: rgba(255, 81, 81, 0.146);
 }
 
 .deposit {
+  background-color: rgba(157, 255, 157, 0.429);
+}
+
+.invoice {
+  background-color: rgba(157, 255, 242, 0.429);
+}
+
+.payment {
+  background-color: rgba(157, 255, 157, 0.429);
+}
+
+.invalid-item {
+  background-color: rgba(255, 81, 81, 0.146);
+}
+.valid-item {
   background-color: rgba(157, 255, 157, 0.429);
 }
