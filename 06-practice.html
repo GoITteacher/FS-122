@@ -10,31 +10,58 @@
   <body>
     <p><a href="index.html">Go back</a></p>
 
-    <form action="submit" class="js-form car-search">
-      <div class="car-group">
-        <input type="text" name="query" class="car-input" placeholder="Пошук" />
-      </div>
-      <div class="car-group">
-        <div>
-          <input type="radio" name="type" value="supercar" />
-          <label for="type">Supercar</label>
+    <div>
+      <form action="submit" class="js-form car-search">
+        <div class="car-group">
+          <input
+            type="text"
+            name="query"
+            class="car-input"
+            placeholder="Пошук"
+          />
         </div>
-        <div>
-          <input type="radio" name="type" value="suv" />
-          <label for="type">SUV</label>
+        <div class="car-group">
+          <div>
+            <input type="radio" name="type" value="supercar" />
+            <label for="type">Supercar</label>
+          </div>
+          <div>
+            <input type="radio" name="type" value="suv" />
+            <label for="type">SUV</label>
+          </div>
+          <div>
+            <input type="radio" name="type" value="sedan" />
+            <label for="type">Sedan</label>
+          </div>
+          <div>
+            <input type="radio" name="type" value="all" checked />
+            <label for="type">All Type</label>
+          </div>
         </div>
-        <div>
-          <input type="radio" name="type" value="sedan" />
-          <label for="type">Sedan</label>
-        </div>
-        <div>
-          <input type="radio" name="type" value="all" checked />
-          <label for="type">All Type</label>
-        </div>
-      </div>
-      <button class="car-button">Пошук</button>
-    </form>
+        <button class="car-button">Пошук</button>
+      </form>
 
+      <form action="submit" class="js-create-form car-search">
+        <input type="text" name="id" placeholder="id" />
+        <input type="text" name="title" placeholder="title" />
+        <input type="number" name="price" placeholder="price" />
+        <input type="text" name="img" placeholder="img" />
+        <input
+          type="checkbox"
+          name="onSale"
+          placeholder="onSale"
+          value="onSale"
+        />
+
+        <select type="text" name="type">
+          <option value="supercar">Supercar</option>
+          <option value="suv">SUV</option>
+          <option value="sedan">Sedan</option>
+        </select>
+
+        <button class="car-button">Додати автомобіль</button>
+      </form>
+    </div>
     <ul class="js-list car-list">
       <li class="car-item">
         <img src="https://picsum.photos/720?random=1" alt="" />
@@ -53,14 +80,6 @@
         </div>
       </li>
       <li class="car-item">
-        <img src="https://picsum.photos/720?random=1" alt="" />
-        <div class="car-info">
-          <h3>Test Title</h3>
-          <p>Type: sport</p>
-          <p>Price: 1000$</p>
-        </div>
-      </li>
-      <li class="car-item on-sale">
         <img src="https://picsum.photos/720?random=1" alt="" />
         <div class="car-info">
           <h3>Test Title</h3>

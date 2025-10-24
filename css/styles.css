@@ -82,3 +82,12 @@ form {
   padding: 5px;
   width: 300px;
 }
+
+.box {
+  width: 100px;
+  height: 100px;
+  /* position: absolute; */
+  /* left: 100px; */
+  /* top: 100px; */
+  background-color: red;
+}
