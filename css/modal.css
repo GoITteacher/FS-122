@@ -2,10 +2,11 @@ body.show-modal .backdrop {
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
+  display: flex;
 }
 
 .backdrop {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -22,9 +23,10 @@ body.show-modal .backdrop {
 }
 
 .modal {
+  background-color: #fff;
   padding: 24px;
-  width: 60vw;
-  height: 60vh;
+  min-width: 60vw;
+  min-height: 60vh;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
