@@ -66,18 +66,23 @@ refs.container.addEventListener('click', e => {
   const id = +liElem.dataset.id;
   const item = products.find(el => el.id === id);
 
-  renderModal(item);
-
-  showModal();
+  showModal(item);
 });
 //!======================================================
+function showModal({ img, name, description, price }) {
+  const modalWindow = basicLightbox.create(
+    `
+  <div class="modal">
+    <img src="${img}" alt="" />
+    <h3>${name}</h3>
+    <p>${description}</p>
+    <p>price:${price}$</p>
+  </div>    
+`,
+  );
 
-refs.backdrop.addEventListener('click', e => {
-  if (e.target === e.currentTarget) {
-    closeModal();
-  }
-});
-
+  modalWindow.show();
+}
 //!======================================================
 function productTemplate(product) {
   return `<li class="item" data-id="${product.id}">
@@ -88,28 +93,59 @@ function productTemplate(product) {
 function productsTemplate(products) {
   return products.map(productTemplate).join('');
 }
+//!======================================================
+// refs.backdrop.addEventListener('click', e => {
+//   if (e.target === e.currentTarget) {
+//     closeModal();
+//   }
+// });
+// function renderModal(product) {
+//   const markup = `<img src="${product.img}" alt="" />
+//           <h3>${product.name}</h3>
+//           <p>${product.description}</p>
+//           <p>price:${product.price}$</p>`;
 
-function renderModal(product) {
-  const markup = `<img src="${product.img}" alt="" />
-          <h3>${product.name}</h3>
-          <p>${product.description}</p>
-          <p>price:${product.price}$</p>`;
+//   refs.modal.innerHTML = markup;
+// }
+// function showModal() {
+//   document.body.classList.add('show-modal');
+//   window.addEventListener('keydown', handleCloseModal);
+// }
+// function closeModal() {
+//   document.body.classList.remove('show-modal');
+//   window.removeEventListener('keydown', handleCloseModal);
+// }
+// function handleCloseModal(e) {
+//   if (e.code === 'Escape') {
+//     closeModal();
+//   }
+// }
+//!======================================================
 
-  refs.modal.innerHTML = markup;
-}
+// const instance = basicLightbox.create(`
+//     <div class="modal">
+//         <p>
+//             Your first lightbox with just a few lines of code.
+//             Yes, it's really that simple.
+//         </p>
+//     </div>
+// `);
 
-function showModal() {
-  document.body.classList.add('show-modal');
-  window.addEventListener('keydown', handleCloseModal);
-}
-function closeModal() {
-  document.body.classList.remove('show-modal');
-  window.removeEventListener('keydown', handleCloseModal);
-}
+// instance.show();
+//!======================================================
 
-function handleCloseModal(e) {
-  if (e.code === 'Escape') {
-    closeModal();
-  }
-}
+// const instance = basicLightbox.create(`
+//     <img src="assets/images/image.png" width="800" height="600">
+// `);
+
+// instance.show();
+
+//!======================================================
+
+// const instance = basicLightbox.create(`
+//     <iframe src="https://www.youtube.com/embed/E1oZhEIrer4" width="560" height="315" frameborder="0"></iframe>
+// `);
+
+// instance.show();
+
 //!======================================================
