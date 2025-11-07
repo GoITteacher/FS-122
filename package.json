@@ -24,6 +24,10 @@
     "vite": "^4.0.5"
   },
   "dependencies": {
+    "basiclightbox": "^5.0.4",
+    "micromodal": "^0.6.1",
+    "simplelightbox": "^2.14.3",
+    "uuid": "^13.0.0",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-html-inject": "^1.0.1"
   },
