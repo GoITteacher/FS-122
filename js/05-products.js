@@ -11,6 +11,9 @@
  * бібліотеку basicLightbox (https://github.com/electerious/basicLightbox
  */
 
+import { productsTemplate } from './product/renderFunctions';
+
+//!======================================================
 const products = [
   {
     id: 1,
@@ -84,15 +87,7 @@ function showModal({ img, name, description, price }) {
   modalWindow.show();
 }
 //!======================================================
-function productTemplate(product) {
-  return `<li class="item" data-id="${product.id}">
-        <img src="${product.img}" alt="${product.name}" />
-        <h2>${product.name}</h2>
-      </li>`;
-}
-function productsTemplate(products) {
-  return products.map(productTemplate).join('');
-}
+
 //!======================================================
 // refs.backdrop.addEventListener('click', e => {
 //   if (e.target === e.currentTarget) {
