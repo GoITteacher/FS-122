@@ -1,55 +1,75 @@
-/**
- * Напишемо клас Timer, який буде
- * запускати та зупиняти відлік часу
- */
+//!======================================================
+const refs = {
+  clockface: document.querySelector('.js-clockface'),
+  startBtn: document.querySelector('button[data-action-start]'),
+  stopBtn: document.querySelector('button[data-action-stop]'),
+};
 
-class Timer {
-  constructor() {}
+//!======================================================
 
-  start() {}
+const timer = {
+  intervalId: null,
+  isActive: false,
 
-  stop() {}
+  start() {
+    if (this.isActive) return;
+    this.isActive = true;
+    const initTime = new Date('11.12.2025 21:51');
 
-  /*
-   * - Приймає час в мілісекундах
-   * - Вираховує скільки в них вміщається годин/хвилин/секунд
-   * - Повертає об'єкт з властивостями hours, mins, secs
-   * - Адська копіпаста з stackoverflow 💩
-   */
-  getTimeComponents(time) {
-    const hours = this.pad(
-      Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    );
-    const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
-    const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
+    this.intervalId = setInterval(() => {
+      const currentTime = new Date();
+      const diffMS = initTime - currentTime;
+      const result = convertMsToTime(diffMS);
+      refs.clockface.textContent = result;
 
-    return { hours, mins, secs };
-  }
+      if (diffMS < 0) {
+        this.stop();
+      }
+    }, 1000);
+  },
 
-  /*
-   * Приймає число, перетворює його в рядок і додає в початок 0, якщо число менше 2-х знаків
-   */
-  pad(value) {
-    return String(value).padStart(2, "0");
-  }
-}
+  stop() {
+    if (!this.isActive) return;
+    this.isActive = false;
+    console.log('STOP');
+    clearInterval(this.intervalId);
+    refs.clockface.textContent = '00:00:00';
+  },
+};
 
-const startBtn = document.querySelector("button[data-action-start]");
-const stopBtn = document.querySelector("button[data-action-stop]");
-const clockface = document.querySelector(".js-clockface");
-
-const timer = new Timer({
-  onTick: updateClockface,
+//!======================================================
+refs.startBtn.addEventListener('click', () => {
+  timer.start();
 });
 
-// startBtn.addEventListener("click", timer.start.bind(timer));
-// stopBtn.addEventListener("click", timer.stop.bind(timer));
+refs.stopBtn.addEventListener('click', () => {
+  timer.stop();
+});
 
-/*
- * - Приймає час в мілісекундах
- * - Вираховує скільки в них вміщається годин/хвилин/секунд
- * - Рисує інтерфейс
- */
-function updateClockface({ hours, mins, secs }) {
-  clockface.textContent = `${hours}:${mins}:${secs}`;
+//!======================================================
+// function getTimeComponents(time) {
+//   const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+//   const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+//   const secs = Math.floor((time % (1000 * 60)) / 1000);
+
+//   return { hours, mins, secs };
+// }
+
+function convertMsToTime(milliseconds) {
+  // Calculate total seconds
+  let totalSeconds = Math.floor(milliseconds / 1000);
+
+  // Calculate hours
+  let hours = Math.floor(totalSeconds / 3600);
+  totalSeconds %= 3600; // Remaining seconds after extracting hours
+
+  // Calculate minutes
+  let minutes = Math.floor(totalSeconds / 60);
+  let seconds = totalSeconds % 60; // Remaining seconds after extracting minutes
+
+  // Pad with leading zeros if necessary
+  const pad = num => String(num).padStart(2, '0');
+
+  return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
 }
