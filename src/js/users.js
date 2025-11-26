@@ -1,4 +1,4 @@
-import { UsersAPI } from './modules/usersAPI';
+import { createUser, UsersAPI } from './modules/usersAPI';
 
 // ===================================================
 const refs = {
@@ -46,3 +46,23 @@ function renderUsers(users) {
   const markup = templateUsers(users);
   refs.userListElem.innerHTML = markup;
 }
+
+//!======================================================
+
+refs.createUserForm('submit', async e => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const user = {
+    name: formData.get('userName'),
+    phone: formData.get('userPhone'),
+    email: formData.get('userEmail'),
+  };
+
+  try {
+    const res = await createUser(user);
+    const markup = templateUser(res.data);
+    refs.userListElem.insertAdjacentHTML('beforeend', markup);
+  } catch {
+    console.log('Error');
+  }
+});

@@ -10,7 +10,7 @@ export class BooksAPI {
     return fetch(url).then(res => res.json());
   }
 
-  createBook(data) {
+  async createBook(data) {
     const url = this.BASE_URL + this.END_POINT;
 
     const options = {
@@ -21,7 +21,9 @@ export class BooksAPI {
       body: JSON.stringify(data),
     };
 
-    return fetch(url, options).then(res => res.json());
+    const res = await fetch(url, options);
+    const data = await res.json();
+    return data;
   }
 
   updateBook(id, book) {
