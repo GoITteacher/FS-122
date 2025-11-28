@@ -1,6 +1,7 @@
 import axios from 'axios';
+//!======================================================
 
-export async function fetchArticles(query, currentPage) {
+export async function fetchNews(query, currentPage) {
   const API_KEY = 'c8747511a2c34730a83caaff4f3693e7';
   const BASE_URL = 'https://newsapi.org/v2';
   const END_POINT = '/everything';
@@ -11,10 +12,12 @@ export async function fetchArticles(query, currentPage) {
     language: 'en',
     sortBy: 'popularity',
     q: query,
-    pageSize: 15,
+    pageSize: 4,
     page: currentPage,
   };
 
   const res = await axios.get(url, { params });
   return res.data;
 }
+
+//!======================================================

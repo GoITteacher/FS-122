@@ -1,105 +1,63 @@
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
-
-import { fetchArticles } from './modules/newsAPI.js';
-import { articlesTemplate } from './templates/render-functions.js';
-
+import { fetchNews } from './modules/newsAPI';
+import { articlesTemplate } from './templates/render-function1';
+//!======================================================
 const refs = {
-  formElem: document.querySelector('.js-search-form'),
-  articleListElem: document.querySelector('.js-article-list'),
-  btnLoadMore: document.querySelector('.js-btn-load'),
-  loadElem: document.querySelector('.js-loader'),
+  form: document.querySelector('.js-search-form'),
+  articleList: document.querySelector('.js-article-list'),
+  loadMoreBtn: document.querySelector('.js-btn-load'),
 };
+//!======================================================
 
-// ======================================
+const PAGE_SIZE = 4;
 let query;
-let page;
-let maxPage;
+let currentPage;
+let totalPages;
 
-refs.formElem.addEventListener('submit', onFormSubmit);
-refs.btnLoadMore.addEventListener('click', onLoadMoreClick);
+//!======================================================
 
-// ======================================
-
-async function onFormSubmit(e) {
+refs.form.addEventListener('submit', async e => {
   e.preventDefault();
-  query = e.target.elements.query.value.trim();
-  page = 1;
+  const formData = new FormData(e.target);
 
-  if (!query) {
-    showError('Empty field');
-    return;
-  }
+  query = formData.get('query');
+  currentPage = 1;
 
-  showLoader();
+  const res = await fetchNews(query, currentPage);
+  const markup = articlesTemplate(res.articles);
+  refs.articleList.innerHTML = markup;
+  totalPages = Math.ceil(res.totalResults / PAGE_SIZE);
 
-  try {
-    const data = await fetchArticles(query, page);
-    if (data.totalResults === 0) {
-      showError('Sorry!');
-    }
-    maxPage = Math.ceil(data.totalResults / 15);
-    refs.articleListElem.innerHTML = '';
-    renderArticles(data.articles);
-  } catch (err) {
-    console.log(err);
-    showError(err);
-  }
+  console.log('Total Pages', totalPages);
 
-  hideLoader();
-  checkBtnVisibleStatus();
+  checkBtnStatus();
+
   e.target.reset();
-}
+});
 
-async function onLoadMoreClick() {
-  page += 1;
-  showLoader();
-  const data = await fetchArticles(query, page);
-  renderArticles(data.articles);
-  hideLoader();
-  checkBtnVisibleStatus();
+//!======================================================
 
-  const height =
-    refs.articleListElem.firstElementChild.getBoundingClientRect().height;
+refs.loadMoreBtn.addEventListener('click', async () => {
+  currentPage += 1;
+  checkBtnStatus();
 
-  scrollBy({
-    behavior: 'smooth',
-    top: 10,
-  });
-}
+  const res = await fetchNews(query, currentPage);
+  const markup = articlesTemplate(res.articles);
+  refs.articleList.insertAdjacentHTML('beforeend', markup);
+});
 
-// ======================================
-function renderArticles(articles) {
-  const markup = articlesTemplate(articles);
-  refs.articleListElem.insertAdjacentHTML('beforeend', markup);
-}
+//!======================================================
 
 function showLoadBtn() {
-  refs.btnLoadMore.classList.remove('hidden');
+  refs.loadMoreBtn.classList.remove('hidden');
 }
 function hideLoadBtn() {
-  refs.btnLoadMore.classList.add('hidden');
+  refs.loadMoreBtn.classList.add('hidden');
 }
 
-function showLoader() {
-  refs.loadElem.classList.remove('hidden');
-}
-function hideLoader() {
-  refs.loadElem.classList.add('hidden');
-}
-
-function showError(msg) {
-  iziToast.error({
-    title: 'Error',
-    message: msg,
-  });
-}
-
-function checkBtnVisibleStatus() {
-  if (page >= maxPage) {
-    hideLoadBtn();
-  } else {
+function checkBtnStatus() {
+  if (currentPage < totalPages) {
     showLoadBtn();
+  } else {
+    hideLoadBtn();
   }
 }
-// ========================================

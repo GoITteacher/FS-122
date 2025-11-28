@@ -1,8 +1,9 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import { fetchNews } from './modules/newsAPI';
+import { articlesTemplate } from './templates/render-function1';
 
-import { fetchArticles } from './modules/newsAPI2.js';
-import { articlesTemplate } from './templates/render-function2.js';
+//!======================================================
 
 const refs = {
   formElem: document.querySelector('.js-search-form'),
@@ -11,72 +12,75 @@ const refs = {
   loadElem: document.querySelector('.js-loader'),
 };
 
-// ======================================
+//!======================================================
+
+const PAGE_SIZE = 4;
+let currentPage;
 let query;
-let page;
-let maxPage;
+let totalPages;
 
-refs.formElem.addEventListener('submit', onFormSubmit);
+const observer = new IntersectionObserver(arr => {
+  const myTargetItem = arr[0];
+  const { isIntersecting } = myTargetItem;
 
-// ======================================
+  if (isIntersecting) {
+    loadMore();
+  }
+}, {});
 
-async function onFormSubmit(e) {
+//!======================================================
+
+refs.formElem.addEventListener('submit', async e => {
   e.preventDefault();
-  query = e.target.elements.query.value.trim();
-  page = 1;
+  showLoader();
+  const formData = new FormData(e.target);
+  query = formData.get('query');
+  currentPage = 1;
+  try {
+    const response = await fetchNews(query, currentPage);
+    const markup = articlesTemplate(response.articles);
+    refs.articleListElem.innerHTML = markup;
 
-  if (!query) {
-    showError('Empty field');
-    return;
+    totalPages = Math.ceil(response.totalResults / PAGE_SIZE);
+  } catch {
+    iziToast.error('Smt went wrong');
   }
 
+  hideLoader();
+  updateObserverStatus();
+  e.target.reset();
+});
+
+//!======================================================
+
+async function loadMore() {
+  currentPage += 1;
   showLoader();
+  updateObserverStatus();
 
   try {
-    const data = await fetchArticles(query, page);
-    if (data.totalResults === 0) {
-      showError('Sorry!');
-    }
-    maxPage = data.total_pages;
-    refs.articleListElem.innerHTML = '';
-    renderArticles(data.articles);
-  } catch (err) {
-    showError(err);
+    const res = await fetchNews(query, currentPage);
+    const markup = articlesTemplate(res.articles);
+    refs.articleListElem.insertAdjacentHTML('beforeend', markup);
+  } catch {}
+
+  hideLoader();
+}
+
+//!======================================================
+
+function updateObserverStatus() {
+  if (currentPage < totalPages) {
+    console.log('Add Observer');
+
+    observer.observe(refs.targetElem);
+  } else {
+    console.log('Remove Observer');
+    observer.unobserve(refs.targetElem);
   }
-
-  hideLoader();
-  checkObserverStatus();
-  e.target.reset();
 }
 
-async function onLoadMore() {
-  page += 1;
-  showLoader();
-  const data = await fetchArticles(query, page);
-  renderArticles(data.articles);
-  hideLoader();
-  checkObserverStatus();
-
-  scrollBy({
-    behavior: 'smooth',
-    top: 1000,
-  });
-}
-
-// ======================================
-function renderArticles(articles) {
-  const markup = articlesTemplate(articles);
-  refs.articleListElem.insertAdjacentHTML('beforeend', markup);
-}
-
-function observeTarget() {
-  console.log('observe');
-  observer.observe(refs.targetElem);
-}
-function unobserveTarget() {
-  console.log('unobserve');
-  observer.unobserve(refs.targetElem);
-}
+//!======================================================
 
 function showLoader() {
   refs.loadElem.classList.remove('hidden');
@@ -84,36 +88,3 @@ function showLoader() {
 function hideLoader() {
   refs.loadElem.classList.add('hidden');
 }
-
-function showError(msg) {
-  iziToast.error({
-    title: 'Error',
-    message: msg,
-  });
-}
-
-function checkObserverStatus() {
-  if (page >= maxPage) {
-    unobserveTarget();
-    showError('Sorry! The End!');
-  } else {
-    observeTarget();
-  }
-}
-// ========================================
-
-const options = {
-  root: document.querySelector('#scrollArea'),
-  rootMargin: '0px',
-  threshold: 1.0,
-};
-
-const callback = function (entries, observer) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      onLoadMore();
-    }
-  });
-};
-
-const observer = new IntersectionObserver(callback, options);
